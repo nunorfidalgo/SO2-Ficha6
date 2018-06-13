@@ -177,7 +177,20 @@ LRESULT CALLBACK TrataEventos(HWND hWnd, UINT messg, WPARAM wParam, LPARAM lPara
 
 	case WM_KEYDOWN:
 	{
-		x++;
+		switch (wParam) {
+		case VK_UP:
+			y--;
+			break;
+		case VK_DOWN:
+			y++;
+			break;
+		case VK_LEFT:
+			x--;
+			break;
+		case VK_RIGHT:
+			x++;
+			break;
+		}
 		InvalidateRect(hWnd, NULL, TRUE);
 	}
 	break;
